@@ -15,7 +15,7 @@ X_train = titanic_train.ix[:, 1:titanic_train.shape[1]]
 # Target:
 y_train = titanic_train.ix[:, 0]
 
-# 2) Fit Random Forest Regressor
+# 2) Fit Random Forest Classifier
 from sklearn.ensemble import RandomForestClassifier
 # n_estimators should be log2(n_features) for reg and sqrt(n_features) for classf
 forest = RandomForestClassifier(n_estimators=3, random_state=0)
