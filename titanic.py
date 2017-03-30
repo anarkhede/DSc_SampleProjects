@@ -15,9 +15,8 @@ X_train = titanic_train.ix[:, 1:titanic_train.shape[1]]
 # Target:
 y_train = titanic_train.ix[:, 0]
 
-# 2) Fit Random Forest Regressor
+# 2) Fit Random Forest Classifier
 from sklearn.ensemble import RandomForestClassifier
-# n_estimators should be log2(n_features) for reg and sqrt(n_features) for classf
 forest = RandomForestClassifier(n_estimators=3, random_state=0)
 forest.fit(X_train, y_train)
 print("Random Forest Train Score: ", forest.score(X_train, y_train))
@@ -41,5 +40,6 @@ X_test = titanic_test.ix[:, 1:titanic_test.shape[1]]
 # 5) Make Prediction
 predictions = forest.predict(X_test)
 pred_df = pd.DataFrame.from_records({'Predictions': predictions, 'PasID': pas_id})
+pred_df.to_csv('/Users/atul/Documents/INTERVIEW_PREP/Study/ML/ML_data/titanic_predictions.csv')
 
 
