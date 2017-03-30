@@ -17,10 +17,9 @@ titanic_test = titanic_test.replace(to_replace=['male', 'female'], value=[1, 0])
 
 # Features:
 X_train = titanic_train.ix[:, 1:titanic_train.shape[1]]
-X_test = titanic_test.ix[:, 1:titanic_test.shape[1]]
+X_test = titanic_test.ix[:, 0:titanic_test.shape[1]]
 # Target:
 y_train = titanic_train.ix[:, 0]
-y_test = titanic_test.ix[:, 0]
 
 # 2) Fit Random Forest Regressor
 from sklearn.ensemble import RandomForestClassifier
@@ -29,9 +28,8 @@ forest = RandomForestClassifier(n_estimators=3, random_state=0)
 forest.fit(X_train, y_train)
 print("Random Forest Train Score: ", forest.score(X_train, y_train))
 
-# 3) Make Prediction    
-y_test = forest.predict(X_test)
-print(accuracy_score(y_test, predictions))
 
-print("Random Forest Test Score: ", forest.score(X_test, y_test))
+
+# 3) Make Prediction
+predictions = forest.predict(X_test)
 
