@@ -38,9 +38,9 @@ plt.scatter(X.ix[y=='versicolor', 3], X.ix[y=='versicolor', 1], color='b', marke
 plt.scatter(X.ix[y=='virginica', 3], X.ix[y=='virginica', 1], color='g', marker='o')
 
 plt.subplot(6,1,6)
-plt.scatter(X.ix[y=='setosa', 3], X.ix[y=='setosa', 1], color='r', marker='o')
-plt.scatter(X.ix[y=='versicolor', 3], X.ix[y=='versicolor', 1], color='b', marker='o')
-plt.scatter(X.ix[y=='virginica', 3], X.ix[y=='virginica', 1], color='g', marker='o')
+plt.scatter(X.ix[y=='setosa', 0], X.ix[y=='setosa', 2], color='r', marker='o')
+plt.scatter(X.ix[y=='versicolor', 0], X.ix[y=='versicolor', 2], color='b', marker='o')
+plt.scatter(X.ix[y=='virginica', 0], X.ix[y=='virginica', 2], color='g', marker='o')
 
 
 # 2) Test/train split
