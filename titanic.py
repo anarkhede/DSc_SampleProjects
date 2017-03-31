@@ -43,3 +43,8 @@ pred_df = pd.DataFrame.from_records({'Predictions': predictions, 'PasID': pas_id
 pred_df.to_csv('/Users/atul/Documents/INTERVIEW_PREP/Study/ML/ML_data/titanic_predictions.csv')
 
 
+# I cleaned up the given training data. Used Random Forest Classifier as my model and
+# used k-fold cross validation for checking for over-fitting and coming up with and
+# average performance score which was 78%. I am submitting the above predictions with that confidence.
+# Thanks!
+
